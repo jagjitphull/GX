@@ -1,0 +1,31 @@
+CREATE TABLE yellow_tripdata_sample(
+vendor_id TEXT,
+pickup_datetime TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+dropoff_datetime TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+passenger_count NUMERIC,
+trip_distance NUMERIC,
+rate_code         INTEGER,
+store_and_fwd_flag TEXT,
+pickup_location_id  NUMERIC,
+dropoff_location_id   NUMERIC,
+payment_type INTEGER,
+fare_amount NUMERIC,
+extra NUMERIC,
+mta_tax NUMERIC,
+tip_amount NUMERIC,
+tolls_amount NUMERIC,
+improvement_surcharge NUMERIC,
+total_amount NUMERIC,
+congestion_surcharge NUMERIC
+);
+
+On psql prompt
+psql>\copy yellow_tripdata_sample from '/tmp/yellow_tripdata_sample_2019-02.csv' delimiter ',' CSV HEADER;
+
+
+Add following, if we get sqlalchemy psycopg2.errors.InsufficientPrivilege: permission denied for
+
+gx20=# grant all privileges on all tables in schema public to gxuser20;
+GRANT
+gx20=# grant all privileges on all sequences in schema public to gxuser20;
+GRANT

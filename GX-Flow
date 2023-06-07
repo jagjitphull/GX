@@ -1,0 +1,41 @@
+Data Context
+  |-- Initialize a Data Context with the CLI
+  |-- Create a DataContext object
+  |-- Load the existing Data Context
+  |-- Save the Data Context for future use
+
+Datasource
+  |-- Create a new Datasource through the CLI
+        |-- Filesystem datasource via Pandas or Spark
+        |-- Relational database
+  |-- Test our Datasource configuration (Optional)
+  |-- Save our Datasource configuration (Stored in great_expectations.yml)
+
+Data Asset (Subset of Datasource) (Optional)
+  |-- Add a Data Asset to the Datasource
+
+Batch Request
+  |-- Create a Batch Request (Has Datasource details)
+  |-- Create a Batch Request from Data Asset (In case of Data Asset)
+
+Expectation and Expectation Suite
+  |-- Create via interactive workflow (With inspecting data) (Recommended)
+  |-- Create via Data Assistant workflow (With inspecting data) (Recommended)
+  	    |-- Create a Batch Request (Has Datasource details)
+  	    |-- Prepare a new Expectation Suite
+  	    |-- Run the Onboarding Data Assistant (Uses Batch Request)
+  	    |-- Save our Expectation Suite
+  	    |-- Test our Expectation Suite with a SimpleCheckpoint
+  	    |-- Plot and inspect the Data Assistant's calculated Metrics and produced Expectations
+  |-- Manually define our Expectations (Without inspecting data) (Default)
+  |-- Custom scripts
+
+Validator
+  |-- Instantiate our Validator (Passing Batch Request and Expection Suite)
+
+Checkpoint
+  |-- Create a new Checkpoint using CLI to open a Jupyter Notebook
+  |-- Edit the existing Checkpoint configuration
+  |-- Validate and test our Checkpoint configuration
+  |-- Store our Checkpoint configuration
+  |-- Run our Checkpoint and open the Data Docs
